@@ -1,0 +1,844 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  cursor: none;
+  /* position: relative; */
+  background-color: #000;
+}
+
+.coursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  transition: 200ms ease-in-out;
+  border-radius: 50%;
+  animation: ani1 .5s infinite alternate;
+}
+
+@keyframes ani1 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.7);
+
+  }
+}
+
+.coursor::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -8px;
+  top: -8px;
+  border-radius: 50%;
+  border: 8px solid gray;
+  animation: ani2 .5s infinite alternate;
+}
+@keyframes ani1 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(.4);
+
+  }
+}
+
+#main {
+  width: 100%;
+}
+
+.space {
+  display: none;
+  display: inline-block;
+}
+
+@font-face {
+  font-family: "northdenregular";
+  src: url("./assets/Fonts/northdenrough-free-webfont.woff") format("woff2"),
+    url("northden-free-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "northden";
+  src: url("./assets/Fonts/northden-free-webfont.woff2") format("woff2"),
+    url("./assets/Fonts/northdenrough-free-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url(./assets/Fonts/GothamBook.ttf);
+  /* font-weight: bold; */
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.viewport_header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 40px;
+}
+
+.viewport_header1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0 40px;
+}
+
+
+
+.nav {
+  width: 100%;
+  height: 100px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: aqua; */
+  /* padding: 0 100px; */
+}
+
+.nav .logo img {
+  width: 133px;
+}
+
+.nav .links .nav_btn {
+  width: 90px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  background-color: transparent;
+
+  color: #aaa;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-right: 15px;
+}
+
+.nav .links .nav_btn:hover {
+  background-color: #aaa;
+  color: black;
+}
+
+.nav .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .links .hamburger {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .links .hamburger:hover {
+  background-color: #aaa;
+  fill: black;
+}
+
+.scroll_info {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll_info .info_text {
+  color: #aaa;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.content {
+  padding: 2px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+
+  /* background-color: azure; */
+}
+
+
+.heading {
+  color: #aaa;
+  font-family: northdenregular;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  height: 100px;
+  overflow: hidden;
+}
+
+.ani_container {
+  height: 100px;
+  overflow: hidden;
+}
+
+.ani_container span {
+  display: inline-block;
+  position: relative;
+  top: 100px;
+  transition: 0.5;
+  margin-top: 20px;
+  transform: rotate(65deg);
+  color: red
+}
+
+/* 
+.heading_3{
+  color: #aaa;
+  font-family: northdenregular;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  overflow: hidden;
+}
+
+.heading_3 span {
+  display: inline-block;
+  position: relative;
+  top: 100px;
+  transition: 0.5;
+  margin-top: 20px;
+  transform: rotate(85deg);
+} */
+
+
+
+.heading span {
+  display: inline-block;
+  position: relative;
+  top: 100px;
+  transition: 0.5;
+  margin-top: 20px;
+  color: red;
+  transform: rotate(65deg);
+}
+
+.common_para {
+  color: #aaa;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  width: 87%;
+  line-height: 25px;
+}
+
+.common_btn {
+  background: white;
+  width: 200px;
+  height: 60px;
+  position: relative;
+}
+
+.common_btn::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  height: 100%;
+  width: 10px;
+  background: white;
+  transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: skewY(-45deg);
+}
+
+.common_btn::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -4.5px;
+  height: 10px;
+  width: 100%;
+  background: white;
+  transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
+
+  transform: skewX(-45deg);
+}
+
+.common_btn:hover::after {
+  height: 0;
+  top: 100%;
+}
+
+.common_btn:hover::before {
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+
+
+.span-text1 {
+  color: #000;
+  font-family: Gotham;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.main_box {
+  position: relative;
+  display: flex;
+
+  padding: 100px 0;
+  width: 100%;
+  gap: 20px;
+}
+
+.leftsides {
+  position: relative;
+  width: 530px;
+  height: 530px;
+  /* width: 50%; */
+  border: 2px solid #aaaaaa;
+}
+
+.gif_images {
+  right: 10px;
+  top: -10px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.rightsides {
+  width: 50%;
+}
+
+.heading_1 {
+  color: #aaa;
+  padding: 4px;
+  font-family: northdenregular;
+  font-size: 94px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.heading_3 {
+  color: #aaa;
+  padding: 4px;
+  font-family: northdenregular;
+  font-size: 94px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.heading_3 span {
+  transform: rotate(20)deg;
+  opacity: 0;
+  color: red
+}
+
+.heading_5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-family: northdenregular;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.heading_5text span {
+  transform: rotate(20)deg;
+  opacity: 0;
+}
+
+.text span {
+  transform: rotate(20)deg;
+
+  opacity: 0;
+  color: red
+}
+
+
+
+
+h1,
+p,
+h2,
+h3,
+h4,
+h5,
+h6 span {
+  margin-left: 2px;
+}
+
+.common_para1 {
+  color: #aaa;
+  font-family: Gotham;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  /* 150% */
+}
+
+.common_btn1 {
+  background: #fff;
+
+  width: 150px;
+  height: 60px;
+}
+
+.span-text {
+  color: #000;
+  font-family: Gotham;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.third_section {
+  padding: 100px 0;
+}
+
+.third_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.heading_2 {
+  color: #fff;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.common_para2 {
+  color: #fff;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.cards {
+  /*display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.cards_list {
+  border: 1px solid #aaa;
+  padding: 10px;
+  cursor: pointer;
+  width: 280px;
+  list-style: none;
+}
+
+.cards_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inner_flex {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.avter_images {
+  width: 40px;
+}
+
+.common_para3 {
+  color: #fff;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.common_btn2 {
+  border-radius: 5px;
+  width: 50px;
+  height: 30px;
+  background: rgba(170, 170, 170, 0.15);
+}
+
+.common_btn_text {
+  color: #aaa;
+  font-family: Gotham;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.nft_images {
+  width: 260px;
+  height: 260px;
+}
+
+.inner_padding {
+  padding: 10px 0;
+}
+
+.common_padding {
+  padding-top: 10px;
+}
+
+.common_para4 {
+  color: #fff;
+  font-family: Gotham;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.main_box1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  width: 100%;
+  height: 100vh;
+}
+
+.banner_images {
+  width: 700px;
+}
+
+.fouth_section {
+  width: 100%;
+
+  padding: 100px 0;
+}
+
+.fouth_section::-webkit-scrollbar {
+  overflow-x: hidden;
+}
+
+
+.heading_6 {
+  font-family: northden;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+  background-color: transparent;
+
+  line-height: normal;
+}
+
+.star_images {
+  width: 48px;
+}
+
+.fifth_section {
+  padding: 60px 0;
+  height: 100vh;
+  text-align: center;
+}
+
+.common_para5 {
+  color: #fff;
+  font-family: Gotham;
+  padding: 20px 0;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.imageDiv {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mysterybox_images {
+  scale: 1;
+  padding-top: 40px;
+  width: 30vw;
+  margin-bottom: 80px;
+}
+
+.six_section {
+  padding: 20px 0;
+}
+
+.six_box {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  border: 2px solid #aaa;
+}
+
+.common_para6 {
+  color: #fff;
+
+  padding: 20px 0;
+  font-family: Gotham;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  /* 120% */
+}
+
+.input_box {
+  width: 540px;
+  height: 60px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #aaa;
+}
+
+.common_para7 {
+  color: #aaa;
+  font-family: Gotham;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  padding: 25px 0;
+}
+
+.input_box1 {
+  width: 540px;
+  height: 60px;
+
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.common_para8 {
+  color: #000;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 25px 0;
+}
+
+.footer_section {
+  text-align: center;
+  padding: 0 40px 100px 40px;
+}
+
+.footer_logo {
+  width: 150px;
+}
+
+.common_para9 {
+  color: #fff;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-family: Gotham;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 125% */
+  padding: 25px 0;
+}
+
+.socials_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.fb_images {
+  width: 22px;
+}
+
+.footer-border {
+  border-top: 1px solid rgba(170, 170, 170, 0.3);
+}
+
+.viewport_footer {
+  position: relative;
+  width: 100%;
+}
+
+.inner_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.inner-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.inner_list-content {
+  color: #fff;
+  font-family: Gotham;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  /* 142.857% */
+  list-style: none;
+}
+
+/*--------*/
+.cta {
+  background: white;
+
+
+  text-decoration: none;
+
+  transition: 1s;
+}
+
+.cta:focus {
+  outline: none;
+}
+
+/* .cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #fff;
+}
+ */
+.cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+span {
+  transform: skewX(15deg);
+}
+
+span:nth-child(2) {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+/**************SVG****************/
+
+path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
